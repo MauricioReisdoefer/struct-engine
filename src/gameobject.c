@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "gameobject.h"
+#include "module.h"
 
 GameObject *GameObject_Create()
 {
@@ -26,7 +27,7 @@ void GameObject_Destroy(GameObject *gameObject)
     {
         for (int i = 0; i < gameObject->componentCount; i++)
         {
-            Component_Destroy(gameObject->components[i]);
+            Module_Destroy(gameObject->components[i]);
         }
     }
     free(gameObject);
