@@ -11,7 +11,7 @@ typedef struct GameObject
     Component *components[MAX_COMPONENTS];
     int active;
     int componentCount;
-    char *tag[MAX_TAG_SIZE];
+    char tag[MAX_TAG_SIZE];
 } GameObject;
 
 GameObject *GameObject_Create();

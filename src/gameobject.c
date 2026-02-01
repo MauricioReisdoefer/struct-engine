@@ -16,7 +16,7 @@ GameObject *GameObject_Create()
 
     gameObject->active = 1;
     gameObject->componentCount = 0;
-    strcpy(*gameObject->tag, "Default");
+    snprintf(gameObject->tag, sizeof(gameObject->tag), "Default");
 
     return gameObject;
 }
