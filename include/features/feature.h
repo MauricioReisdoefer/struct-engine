@@ -12,15 +12,15 @@ typedef enum
 } FeatureType;
 
 // Forward Declaration
-struct GameObject;
+struct Node;
 
 typedef struct
 {
-    struct GameObject *owner;
+    struct Node *owner;
     FeatureType type;
 } Feature;
 
-Feature *Feature_Create(struct GameObject *owner, FeatureType type);
+Feature *Feature_Create(struct Node *owner, FeatureType type);
 void Feature_Destroy(Feature *component);
 
 #endif

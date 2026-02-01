@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "gameobject.h"
+#include "node.h"
 #include "feature.h"
 
 const char *_feature_type_to_string(FeatureType type)
@@ -21,7 +21,7 @@ const char *_feature_type_to_string(FeatureType type)
     }
 }
 
-Feature *Feature_Create(GameObject *owner, FeatureType type)
+Feature *Feature_Create(Node *owner, FeatureType type)
 {
     Feature *feature = (Feature *)malloc(sizeof(Feature));
     if (feature == NULL)
