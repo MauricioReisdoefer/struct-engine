@@ -8,7 +8,8 @@ typedef enum
     FEATURE_TRANSFORM,
     FEATURE_RIGIDBODY,
     FEATURE_SPRITE,
-    FEATURE_COLLIDER
+    FEATURE_COLLIDER,
+    FEATURE_UNDEFINED
 } FeatureType;
 
 // Forward Declaration

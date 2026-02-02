@@ -7,13 +7,16 @@
 
 #include "feature.h"
 
+// Forward Declaration
+typedef struct Node Node;
+
 typedef struct Node
 {
-    Feature *components[MAX_COMPONENTS];
+    Feature *features[MAX_COMPONENTS];
     Node *children[MAX_CHILDREN_NODES];
     int active;
 
-    int componentCount;
+    int featureCount;
     int childrenCount;
     char tag[MAX_TAG_SIZE];
 } Node;

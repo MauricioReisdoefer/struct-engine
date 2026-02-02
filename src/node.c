@@ -16,7 +16,7 @@ Node *Node_Create()
     }
 
     node->active = 1;
-    node->componentCount = 0;
+    node->featureCount = 0;
     snprintf(node->tag, sizeof(node->tag), "Default");
 
     return node;
@@ -25,14 +25,14 @@ void Node_Destroy(Node *node)
 {
     if (!node)
         return;
-    if (node->componentCount > 0)
+    if (node->featureCount > 0)
     {
-        for (int i = 0; i < node->componentCount; i++)
+        for (int i = 0; i < node->featureCount; i++)
         {
-            Feature_Destroy(node->components[i]);
-            node->components[i] = NULL;
+            Feature_Destroy(node->features[i]);
+            node->features[i] = NULL;
         }
-        node->componentCount = 0;
+        node->featureCount = 0;
     }
     if (node->childrenCount > 0)
     {
@@ -54,12 +54,12 @@ void Node_Add_Feature(Node *self, Feature *feature)
         return;
     }
 
-    if (self->componentCount >= MAX_COMPONENTS)
+    if (self->featureCount >= MAX_COMPONENTS)
     {
-        printf("Node_Add_Feature: maximum components reached\n");
+        printf("Node_Add_Feature: maximum features reached\n");
         return;
     }
 
-    self->components[self->componentCount] = feature;
-    self->componentCount++;
+    self->features[self->featureCount] = feature;
+    self->featureCount++;
 }
