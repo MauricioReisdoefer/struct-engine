@@ -24,5 +24,6 @@ typedef struct Node
 Node *Node_Create();
 void Node_Destroy(Node *node);
 void Node_Add_Feature(Node *self, Feature *feature);
+Feature *Node_Get_Feature(Node *self, FeatureType type);
 
 #endif

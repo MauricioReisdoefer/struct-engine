@@ -63,3 +63,21 @@ void Node_Add_Feature(Node *self, Feature *feature)
     self->features[self->featureCount] = feature;
     self->featureCount++;
 }
+
+Feature *Node_Get_Feature(Node *self, FeatureType type)
+{
+    if (!self)
+    {
+        printf("Node_Get_Feature: self is NULL\n");
+        return NULL;
+    }
+
+    for (int i = 0; i < self->featureCount; i++)
+    {
+        if (self->features[i] && self->features[i]->type == type)
+        {
+            return self->features[i];
+        }
+    }
+    return NULL;
+}
