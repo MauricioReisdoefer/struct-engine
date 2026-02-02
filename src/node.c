@@ -11,7 +11,7 @@ Node *Node_Create()
 
     if (node == NULL)
     {
-        printf("Node was not initialized!");
+        printf("Node_Create: Node was not initialized!");
         return NULL;
     }
 
@@ -44,4 +44,22 @@ void Node_Destroy(Node *node)
         node->childrenCount = 0;
     }
     free(node);
+}
+
+void Node_Add_Feature(Node *self, Feature *feature)
+{
+    if (!self || !feature)
+    {
+        printf("Node_Add_Feature: self or feature is NULL\n");
+        return;
+    }
+
+    if (self->componentCount >= MAX_COMPONENTS)
+    {
+        printf("Node_Add_Feature: maximum components reached\n");
+        return;
+    }
+
+    self->components[self->componentCount] = feature;
+    self->componentCount++;
 }

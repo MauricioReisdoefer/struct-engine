@@ -20,5 +20,6 @@ typedef struct Node
 
 Node *Node_Create();
 void Node_Destroy(Node *node);
+void Node_Add_Feature(Node *self, Feature *feature);
 
 #endif

@@ -26,7 +26,7 @@ Feature *Feature_Create(Node *owner, FeatureType type)
     Feature *feature = (Feature *)malloc(sizeof(Feature));
     if (feature == NULL)
     {
-        printf("Feature of type %s was not initialized!\n", _feature_type_to_string(type));
+        printf("Feature_Create: Feature of type %s was not initialized!\n", _feature_type_to_string(type));
         return NULL;
     }
 
