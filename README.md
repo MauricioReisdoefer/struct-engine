@@ -1,3 +1,3 @@
-# STRUCT ENGINE
+# CNodes
 
-STRUCT ENGINE is a lightweight and straightforward game engine written in C and built on top of SDL3, focused on full control, performance, and structural simplicity.
+CNodes is a lightweight and straightforward game engine written in C and built on top of SDL3, focused on full control, performance, and structural simplicity.
