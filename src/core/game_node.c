@@ -31,9 +31,9 @@ int GameNode_Destroy(GameNode **self)
         GameNode_Destroy(&(*self)->children[i]);
     }
 
-    for (int i = 0; i < (*self)->feature_count; i++)
+    for (int i = 0; i < (*self)->component_count; i++)
     {
-        Component_Destroy(&(*self)->features[i]);
+        Component_Destroy(&(*self)->components[i]);
     }
 
     free(*self);
