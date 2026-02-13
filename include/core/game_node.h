@@ -4,12 +4,15 @@
 #define MAX_NODE_COMPONENT 32
 
 #include "component.h"
+#include "transform.h"
 
 typedef struct GameNode GameNode;
 
 typedef struct GameNode
 {
     char *tag;
+
+    Transform transform;
 
     struct GameNode *children[MAX_CHILDREN_NODES];
     int children_count;

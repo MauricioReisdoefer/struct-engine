@@ -17,6 +17,8 @@ GameNode *GameNode_Create(const char *tag)
         return NULL;
     }
 
+    self->transform = Transform_Create();
+
     return self;
 }
 
